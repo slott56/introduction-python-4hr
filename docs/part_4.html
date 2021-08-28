@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<meta name="version" content="S5 1.1" />
+<title>Introduction to Python Programming</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<!-- configuration parameters -->
+<meta name="defaultView" content="slideshow" />
+<meta name="controlVis" content="hidden" />
+<!-- style sheet links -->
+<script src="ui/default/slides.js" type="text/javascript"></script>
+<link rel="stylesheet" href="ui/default/slides.css"
+      type="text/css" media="projection" id="slideProj" />
+<link rel="stylesheet" href="ui/default/outline.css"
+      type="text/css" media="screen" id="outlineStyle" />
+<link rel="stylesheet" href="ui/default/print.css"
+      type="text/css" media="print" id="slidePrint" />
+<link rel="stylesheet" href="ui/default/opera.css"
+      type="text/css" media="projection" id="operaFix" />
+
+<style type="text/css">
+#currentSlide {display: none;}
+</style>
+</head>
+<body>
+<div class="layout">
+<div id="controls"></div>
+<div id="currentSlide"></div>
+<div id="header">
+
+</div>
+<div id="footer">
+<h1>Introduction to Python Programming</h1>
+
+</div>
+</div>
+<div class="presentation">
+<div class="slide" id="slide0">
+<h1 class="title">Introduction to Python Programming</h1>
+<h2 class="subtitle" id="steven-f-lott">Steven F. Lott</h2>
+
+<p>Part 4 -- Tooling and Good Practices</p>
+
+</div>
+<div class="slide" id="agenda">
+<h1>Agenda</h1>
+<ol class="arabic simple">
+<li>Base Python Runtime and Virtual Environment Manager</li>
+<li>Jupyter Lab</li>
+<li>IDE</li>
+<li>Testing</li>
+<li>Multi-Environment Testing</li>
+<li>Documentation</li>
+<li>Deployment</li>
+</ol>
+</div>
+<div class="slide" id="base-python-runtime-and-virtual-environment-manager">
+<h1>1. Base Python Runtime and Virtual Environment Manager</h1>
+<p>See Part 1.</p>
+<p>Use <strong>conda</strong>.</p>
+<ol class="arabic simple">
+<li>Download Miniconda (or the full Anaconda if you're a scientist)</li>
+<li>Install Conda (or Anaconda)</li>
+<li>Use <tt class="docutils literal">conda create</tt> to create a Python environment</li>
+<li>Use <tt class="docutils literal">conda activate</tt> to activate a environment</li>
+</ol>
+</div>
+<div class="slide" id="why-conda">
+<h1>Why Conda?</h1>
+<p>Python comes with <tt class="docutils literal">venv</tt>, plus there are many others.</p>
+<p>Conda is particularly good a building large scientific packages.</p>
+<p>The <tt class="docutils literal">conda</tt> script is consistent on POSIX (Linux and macOS) as well as Windows.</p>
+</div>
+<div class="slide" id="why-use-another">
+<h1>Why Use Another?</h1>
+<p>Python comes with <tt class="docutils literal">venv</tt>.</p>
+<p>If</p>
+<ul class="simple">
+<li>you can install a Python binary from <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+<li>you'll <em>never</em> build a binary of any kind</li>
+</ul>
+<p>You don't need <strong>conda</strong>.  <tt class="docutils literal">venv</tt> will do nicely.</p>
+</div>
+<div class="slide" id="why-use-virtual-environments">
+<h1>Why Use Virtual Environments?</h1>
+<p>One environment is never enough.</p>
+<p>Open source software in general is in a constant state of flux.</p>
+<p>You'll always need to test against newer versions of packages, libraries, frameworks.</p>
+<p>Python changes on a regular cadence. See <a class="reference external" href="https://www.python.org/dev/peps/pep-0619/">https://www.python.org/dev/peps/pep-0619/</a></p>
+</div>
+<div class="slide" id="docker-images">
+<h1>Docker Images</h1>
+<p>Don't know how many folks intend to use docker images. I can recommend this path.</p>
+<p>You can often find docker images with Python installed.</p>
+<p>Example <tt class="docutils literal">ubuntu:latest</tt>, <tt class="docutils literal">debian:latest</tt>, <tt class="docutils literal">python:3.9</tt></p>
+<pre class="literal-block">
+docker pull python
+docker run -it --rm -v &quot;$PWD&quot; python:3 python your-script.py
+</pre>
+</div>
+<div class="slide" id="summary">
+<h1>Summary</h1>
+<p>Use a virtual environment manager.</p>
+<p>Ideally. Use <strong>conda</strong> to build Python for you.</p>
+<p>Otherwise. Download the Python binary and use whatever virtual environment makes you happiest.</p>
+</div>
+<div class="slide" id="jupyter-lab">
+<h1>2. Jupyter Lab</h1>
+<p>Use <strong>Jupyter Lab</strong></p>
+<ol class="arabic">
+<li><p class="first">Install it in your current virtual enviroment.</p>
+<pre class="literal-block">
+conda install jupyterlab
+</pre>
+</li>
+<li><p class="first">Star the lab server.</p>
+<pre class="literal-block">
+jupyter lab
+</pre>
+</li>
+<li><p class="first">Create a notebook.</p>
+</li>
+</ol>
+</div>
+<div class="slide" id="why-use-jupyterlab">
+<h1>Why Use JupyterLab?</h1>
+<p>It's really cool and friendly.</p>
+</div>
+<div class="slide" id="why-not-use-interactive-python">
+<h1>Why Not Use Interactive Python?</h1>
+<p>It's very low overhead.</p>
+<pre class="literal-block">
+(python4hr) ODSC-Live-4hr % python
+Python 3.9.6 (default, Aug 18 2021, 12:38:10)
+[Clang 10.0.0 ] :: Anaconda, Inc. on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; 355/113
+3.1415929203539825
+&gt;&gt;&gt;
+</pre>
+<p>It's a bare Read-Execute-Print Loop (REPL).</p>
+</div>
+<div class="slide" id="production-use-i-e-automation">
+<h1>&quot;Production&quot; Use -- i.e. Automation</h1>
+<p>Consider your use cases.</p>
+<ul>
+<li><p class="first">Analysis? Decision-Support? Science?</p>
+<p>Notebook. Users can tweak assumptions and do &quot;what-if&quot; analysis.</p>
+</li>
+<li><p class="first">Automation? Web Server? IoT Application? Mobile Application?</p>
+<p>Deployed App. Admins can change configuration.</p>
+</li>
+</ul>
+</div>
+<div class="slide" id="development">
+<h1>Development</h1>
+<p>Python is designed to be used interactively.</p>
+<ul class="simple">
+<li>The command-line REPL is a first-class feature, not an add-on.</li>
+</ul>
+<p>Use Python interactively to explore algorithms and data.</p>
+<ul class="simple">
+<li>Don't write code, run the compiler, run the debugger, and see what broke.</li>
+<li>Write code and see what happens.</li>
+</ul>
+</div>
+<div class="slide" id="can-t-emphasize-this-enough">
+<h1>Can't emphasize this enough</h1>
+<p>Been writing Python code for 20 years.</p>
+<p>A REPL prompt open in a terminal window (or the IDE) at <strong>all</strong> ties.</p>
+<p>Use it as a desk calculator.</p>
+<p>Did a weekly in-house webcast for years from a jupyter notebook.</p>
+</div>
+<div class="slide" id="but-what-if-it-s-complex">
+<h1>But. What if it's complex?</h1>
+<p>Outside talks like these, it's always complex.</p>
+<p>You'll often be creating your own modules and libraries.</p>
+<p>You can provide users with a notebook that has <tt class="docutils literal">imports</tt> all set up and ready to roll.</p>
+<p>You can give them super-handy libraries of ready-to-use functions.</p>
+</div>
+<div class="slide" id="id1">
+<h1>Summary</h1>
+<p>The Jupyter Lab is very handy.</p>
+</div>
+<div class="slide" id="ide">
+<h1>3. IDE</h1>
+<p>When you're going to be writing Python apps, libraries, modules, frameworks, scripts, etc.</p>
+<p>Any text editor will do.  <strong>Any</strong>.</p>
+<div class="incremental docutils container">
+Except notepad on Windows. Never use notepad.</div>
+</div>
+<div class="slide" id="ide-examples">
+<h1>IDE Examples</h1>
+<ul class="simple">
+<li>Anaconda includes Spyder. It's Scientific. <a class="reference external" href="https://www.spyder-ide.org">https://www.spyder-ide.org</a></li>
+<li>I like PyCharm community edition. <a class="reference external" href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a></li>
+<li>VS code is popular. <a class="reference external" href="https://code.visualstudio.com/docs/languages/python">https://code.visualstudio.com/docs/languages/python</a></li>
+<li>For IoT, you'll also be using <tt class="docutils literal">screen</tt>, or something similar.</li>
+</ul>
+<p>There are -- maybe -- 20 more choices. All good. All.</p>
+</div>
+<div class="slide" id="why-so-many-ide-s">
+<h1>Why So Many IDE's?</h1>
+<p>Python is simple.</p>
+<ul class="simple">
+<li>Simple interactive run-time.</li>
+<li>Simple text language.</li>
+</ul>
+<p><strong>No compile/build/archive tool overhead.</strong></p>
+<p>Minimal debugging and packaging complexity.</p>
+</div>
+<div class="slide" id="no-tool-overhead">
+<h1>No Tool Overhead</h1>
+<p>A lot of complexity in Java, C, C++, etc., comes from the compiler.</p>
+<p>And the archiver to make JAR's (or .ar or whatever).</p>
+<p>And the linker to make an executable app from .o files and .ar.
+(or .java and .jar)</p>
+<p>None of this in Python.</p>
+</div>
+<div class="slide" id="but-wait-you-say">
+<h1>But Wait! You Say</h1>
+<p>I used <tt class="docutils literal">python <span class="pre">-m</span> pip install whatever</tt></p>
+<p>It downloaded a &quot;wheel&quot; <tt class="docutils literal">whatever.whl</tt>.</p>
+<p>Isn't that tooling overhead? Just like a JAR file?</p>
+</div>
+<div class="slide" id="it-s-handy-but-no">
+<h1>It's Handy. But No.</h1>
+<p>Much Python software is available as a &quot;wheel&quot; or &quot;egg&quot;.</p>
+<p>This is not <strong>required</strong>.</p>
+<p>You never need to make these.</p>
+<p>This tooling is outside the language and only required if you package things for PyPI.</p>
+</div>
+<div class="slide" id="debugging">
+<h1>Debugging?</h1>
+<p>The <tt class="docutils literal">pdb</tt> Python debugger is part of the distribution.</p>
+<p>Feel free to use it.</p>
+<p>(I add <tt class="docutils literal">print()</tt> functions. I don't often use the debugger.)</p>
+</div>
+<div class="slide" id="packaging">
+<h1>Packaging?</h1>
+<p>When you've got a great library/package/framework/tool/whatever...</p>
+<p>You'll want to put it on PyPI for others to share.</p>
+<p>Then you'll get involved in &quot;distutils&quot; and &quot;twine&quot;.</p>
+<p>Don't start there, though. First, get stuff to work.</p>
+</div>
+<div class="slide" id="organization">
+<h1>Organization</h1>
+<pre class="literal-block">
+src
+    collatz.py
+
+tests
+    test_collatz.py
+
+docs
+    ... created by sphinx
+
+README
+requirements.txt
+pyproject.toml
+</pre>
+</div>
+<div class="slide" id="follow-along">
+<h1>Follow Along</h1>
+<p>Make some directories</p>
+<ul class="simple">
+<li><tt class="docutils literal">src</tt></li>
+<li><tt class="docutils literal">test</tt></li>
+<li><tt class="docutils literal">docs</tt></li>
+</ul>
+<p>Create a <tt class="docutils literal">collatz.py</tt> file in src.</p>
+<p>We'll put some code in it later.</p>
+</div>
+<div class="slide" id="important">
+<h1>Important</h1>
+<p>Flat is better than nested.</p>
+<p>Don't create one-file-per-class. This is a silly approach designed to help the compiler.</p>
+<p>Don't create lots and lots of nested directories. They don't help much.</p>
+<p>You don't need much. A single <tt class="docutils literal">myscript.py</tt> is acceptable. Really.</p>
+</div>
+<div class="slide" id="id2">
+<h1>Summary</h1>
+<p>Any text editor will be good.</p>
+<p>There's not much that's required.</p>
+<p>You want syntax coloring, ready access to Python prompt and command line.</p>
+<p>Don't sweat PyPI packaging and distribution.</p>
+</div>
+<div class="slide" id="testing">
+<h1>4. Testing</h1>
+<p>Unit testing and integration testing are really important.</p>
+<p>Really important.</p>
+<blockquote>
+<p>Software features that can't be demonstrated by automated tests simply don't exist.</p>
+<p><cite>Extreme Programming Explained</cite>, Kent Beck</p>
+</blockquote>
+<div class="incremental docutils container">
+What do we do?</div>
+</div>
+<div class="slide" id="testing-approach">
+<h1>Testing Approach</h1>
+<p>TDD -- Test-Driven Development is your friend.</p>
+<p>To the extent possible, write test cases first.</p>
+<p>Fill in working code later to make the tests pass.</p>
+</div>
+<div class="slide" id="testing-tools">
+<h1>Testing Tools</h1>
+<ul class="simple">
+<li><tt class="docutils literal">doctest</tt> -- part of Python's Standard Library.</li>
+<li><tt class="docutils literal">pytest</tt> -- an add-on, but REALLY useful.</li>
+<li><tt class="docutils literal">unittest</tt> -- part of the Standard Library, but harder to use.</li>
+<li><tt class="docutils literal">unittest.mock</tt> -- Mock objects to permit unit testing.</li>
+<li><tt class="docutils literal">coverage</tt> -- an add-on. You'll want this, also.</li>
+</ul>
+</div>
+<div class="slide" id="using-doctest">
+<h1>Using Doctest</h1>
+<p>The <tt class="docutils literal">doctest</tt> tool scans a file, looking for <tt class="docutils literal">&gt;&gt;&gt;</tt> examples.</p>
+<p>It runs the <tt class="docutils literal">&gt;&gt;&gt;</tt> line(s) of code.</p>
+<p>Compares them with the lines that follow.</p>
+</div>
+<div class="slide" id="my-file-src-collatz-py">
+<h1>My File: src/collatz.py</h1>
+<pre class="literal-block">
+def hotpo(n: int) -&gt; int:
+    &quot;&quot;&quot;
+    &gt;&gt;&gt; hotpo(10)
+    5
+    &gt;&gt;&gt; hotpo(5)
+    16
+    &quot;&quot;&quot;
+    if n % 2 == 0:
+        return n // 2
+    else:
+        return 3 * n + 1
+</pre>
+</div>
+<div class="slide" id="running-doctest">
+<h1>Running Doctest</h1>
+<pre class="literal-block">
+% python -m doctest src/collatz.py
+</pre>
+<p>No output? No failures.</p>
+<p>Want details? Add <tt class="docutils literal"><span class="pre">-v</span></tt>.</p>
+<pre class="literal-block">
+% python -m doctest -v src/collatz.py
+</pre>
+</div>
+<div class="slide" id="using-pytest">
+<h1>Using Pytest</h1>
+<p>First. Install it <tt class="docutils literal">conda install pytest</tt>.</p>
+<p>The <tt class="docutils literal">pytest</tt> tool looks for a <tt class="docutils literal">tests</tt> directory.</p>
+<p>Inside that directory, it looks for files with names starting with <tt class="docutils literal"><span class="pre">test*.py</span></tt>.</p>
+<p>Within those files, it looks for test cases.</p>
+<ul class="simple">
+<li>Function named <tt class="docutils literal"><span class="pre">test...</span></tt>.</li>
+<li>Subclass of <tt class="docutils literal">unittest.TestCase</tt>.</li>
+</ul>
+</div>
+<div class="slide" id="my-file-tests-test-collatz-py">
+<h1>My File: <tt class="docutils literal">tests/test_collatz.py</tt></h1>
+<pre class="literal-block">
+import pytest
+from collatz import hotpo
+
+def test_hotpo():
+    assert 5 == hotpo(10)
+    assert 16 == hotpo(5)
+</pre>
+</div>
+<div class="slide" id="running-pytest">
+<h1>Running Pytest</h1>
+<pre class="literal-block">
+% PYTHONPATH=src python -m pytest
+
+===================== test session starts =====================
+platform darwin -- Python 3.9.6, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+rootdir: /Users/slott/Documents/Writing/Python/ODSC-Live-4hr
+plugins: anyio-2.2.0
+collected 1 item
+
+tests/test_collatz.py .                                 [100%]
+
+====================== 1 passed in 0.02s ======================
+</pre>
+</div>
+<div class="slide" id="wait-what-s-that-command-again">
+<h1>Wait. What's that command again?</h1>
+<p>Code is in a <tt class="docutils literal">src</tt> directory.</p>
+<p>To make code in <tt class="docutils literal">src</tt> visible:</p>
+<ul>
+<li><p class="first">Package and install. Ugh.</p>
+</li>
+<li><p class="first">Put <tt class="docutils literal">src</tt> directory into the <tt class="docutils literal">PYTHONPATH</tt> environment variable</p>
+<pre class="literal-block">
+PYTHONPATH=src python -m pytest
+</pre>
+</li>
+</ul>
+</div>
+<div class="slide" id="using-unittest">
+<h1>Using Unittest</h1>
+<pre class="literal-block">
+import unittest
+from collatz import hotpo
+
+class TestHotpo(unittest.TestCase):
+    def test(self):
+        self.assertEqual(5, hotpo(10))
+        self.assertEqual(16, hotpo(5))
+</pre>
+<div class="incremental docutils container">
+Wordy.</div>
+</div>
+<div class="slide" id="mocking">
+<h1>Mocking</h1>
+<p>We create mock collaborators to test a class in isolation.</p>
+<p>It's a stand-in that has just enough behavior to not crash the test.</p>
+<p>Usually filled with known, fake answers.</p>
+<pre class="literal-block">
+&gt;&gt;&gt; transform = Mock(return_value=42)
+&gt;&gt;&gt; transform(1)
+42
+</pre>
+</div>
+<div class="slide" id="more-of-src-collatz-py">
+<h1>More of src/collatz.py</h1>
+<pre class="literal-block">
+def iterate_from(n: int) -&gt; Iterator[int]:
+    yield n
+    while n != 1:
+        n = hotpo(n)
+        yield n
+</pre>
+<p>Depends on <tt class="docutils literal">hotpo()</tt>. Isolation requires a <tt class="docutils literal">Mock</tt>.</p>
+</div>
+<div class="slide" id="creating-a-mock">
+<h1>Creating a Mock</h1>
+<pre class="literal-block">
+import pytest
+from unittest.mock import Mock, call
+
+&#64;pytest.fixture
+def mock_hotpo(monkeypatch):
+    m = Mock(name='mock hotpo', side_effect=[4, 2, 1])
+    monkeypatch.setattr(collatz, 'hotpo', m)
+    return m
+</pre>
+</div>
+<div class="slide" id="using-a-mock">
+<h1>Using A Mock</h1>
+<pre class="literal-block">
+def test_iterate_from(mock_hotpo):
+    results = list(collatz.iterate_from(42))
+    assert results == [42, 4, 2, 1]
+    assert mock_hotpo.mock_calls == [
+        call(42),
+        call(4),
+        call(2)
+    ]
+</pre>
+</div>
+<div class="slide" id="design-for-testability">
+<h1>Design for Testability</h1>
+<p>Helps to follow the SOLID design principles.</p>
+<p>The dependency between <tt class="docutils literal">iterate_from()</tt> and <tt class="docutils literal">hotpo()</tt> is a design problem.</p>
+<ul class="simple">
+<li>Not following Open/Closed Principle or Dependency Inversion Principle</li>
+</ul>
+<p>Requires monkeypatching the module for a test.</p>
+</div>
+<div class="slide" id="coverage">
+<h1>Coverage</h1>
+<p>The topic of test case coverage is huge.</p>
+<ul class="simple">
+<li>Cover all lines of code?</li>
+<li>Cover all paths through the logic?</li>
+<li>Cover all the important integration interfaces?</li>
+</ul>
+</div>
+<div class="slide" id="a-simple-approach">
+<h1>A Simple Approach</h1>
+<p>Strive for 100% code coverage.</p>
+<pre class="literal-block">
+conda isntall pytest-cov
+</pre>
+<pre class="literal-block">
+PYTHONPATH=src python -m pytest --cov=src \
+    --cov-report=term-missing
+</pre>
+</div>
+<div class="slide" id="example-coverage-report">
+<h1>Example Coverage Report</h1>
+<pre class="literal-block">
+---------- coverage: platform darwin, python 3.9.6-final-0 -----------
+Name             Stmts   Miss  Cover   Missing
+----------------------------------------------
+src/collatz.py      10      0   100%
+----------------------------------------------
+TOTAL               10      0   100%
+</pre>
+</div>
+<div class="slide" id="testing-basics">
+<h1>Testing Basics</h1>
+<ol class="arabic simple">
+<li><tt class="docutils literal">doctest</tt> Start here. Use <tt class="docutils literal">&gt;&gt;&gt;</tt> examples everywhere.</li>
+<li><tt class="docutils literal">pytest</tt> Use this as your primary test engine.</li>
+<li><tt class="docutils literal">unittest.mock</tt> Buids mock objects. Good design reduces need for monkeypatching.</li>
+<li><tt class="docutils literal">coverage</tt> Install <tt class="docutils literal"><span class="pre">pytest-cov</span></tt> and it's integrated with <tt class="docutils literal">pytest</tt>.</li>
+</ol>
+<div class="incremental docutils container">
+Yes, there's more.</div>
+</div>
+<div class="slide" id="multi-environment-testing">
+<h1>5. Multi-Environment Testing</h1>
+<p>We'll always have multiple versions of packages on which we depend.</p>
+<p>We'll need to test various versions of those packages with our code.</p>
+<p>How do we do this?  <strong>tox</strong></p>
+</div>
+<div class="slide" id="what-tox-does">
+<h1>What tox does</h1>
+<p>The <strong>tox</strong> tool build virtual environments.</p>
+<p>And runs commands in each environment.</p>
+<div class="incremental docutils container">
+That's all.</div>
+<div class="incremental docutils container">
+But wow! is that handy</div>
+</div>
+<div class="slide" id="install">
+<h1>Install</h1>
+<p>This isn't available through <strong>conda</strong></p>
+<pre class="literal-block">
+python -m pip install tox
+</pre>
+</div>
+<div class="slide" id="configuration">
+<h1>Configuration</h1>
+<p>There are two paths for configuration for <strong>tox</strong></p>
+<ul class="simple">
+<li>A <tt class="docutils literal">tox.ini</tt> file.  This is simple.</li>
+<li>A <tt class="docutils literal">pyproject.toml</tt> file. This is more complete.<ul>
+<li>But the syntax is confusing.</li>
+</ul>
+</li>
+</ul>
+<p>We'll focus on a simple <tt class="docutils literal">tox.ini</tt>.</p>
+</div>
+<div class="slide" id="tox-ini-part-1">
+<h1>tox.ini part 1</h1>
+<p>Some generic overhead.</p>
+<pre class="literal-block">
+[tox]
+minversion = 3.20.0
+skipsdist = True
+envlist = json-3-2-0,json-4-0-0
+</pre>
+</div>
+<div class="slide" id="tox-ini-part-2-general-environment">
+<h1>tox.ini part 2 -- General Environment</h1>
+<pre class="literal-block">
+[testenv]
+deps =
+    pytest==6.2.4
+    pytest-cov==2.12.0
+    mypy==0.910
+setenv   =
+    PYTHONPATH = {toxinidir}/src
+commands =
+    python -m doctest --option ELLIPSIS src/collatz.py
+    python -m pytest --cov=src --cov-report=term-missing
+    mypy --strict --show-error-codes src
+</pre>
+</div>
+<div class="slide" id="tox-ini-part-3-specific-overrides">
+<h1>tox.ini part 3 -- Specific Overrides</h1>
+<pre class="literal-block">
+[testenv:json-3-2-0]
+deps =
+    {[testenv]deps}
+    jsonschema==3.2.0
+
+[testenv:json-4-0-0]
+deps =
+    {[testenv]deps}
+    jsonschema==4.0.0a6
+</pre>
+</div>
+<div class="slide" id="running-tox">
+<h1>Running Tox</h1>
+<pre class="literal-block">
+% tox
+</pre>
+<p>Output from each command...</p>
+<pre class="literal-block">
+________________________ summary ________________________
+  json-3-2-0: commands succeeded
+  json-4-0-0: commands succeeded
+  congratulations :)
+</pre>
+<p>The first run after a change populates a cache. After that, it's fast.</p>
+</div>
+<div class="slide" id="id3">
+<h1>Summary</h1>
+<p>You're going to have multiple test commands: doctest, pytest, mypy, pylint, etc.</p>
+<p>Don't write a shell script.</p>
+<p>Use <tt class="docutils literal">tox</tt> to run the suite of commands.</p>
+<p>Later, when you have multiple environments, tox can manage those, too.</p>
+</div>
+<div class="slide" id="documentation">
+<h1>6. Documentation</h1>
+<p>Easy.</p>
+<p>Use Sphinx.</p>
+</div>
+<div class="slide" id="steps">
+<h1>Steps</h1>
+<ol class="arabic simple">
+<li>Install sphinx:  <tt class="docutils literal">conda install sphinx</tt>.</li>
+<li>Create a <tt class="docutils literal">docs</tt> directory.  <tt class="docutils literal">cd docs</tt>.</li>
+<li>Run <tt class="docutils literal"><span class="pre">sphinx-quickstart</span></tt> in <tt class="docutils literal">docs</tt> to build the <tt class="docutils literal">config.py</tt> for you.</li>
+<li>Run <tt class="docutils literal">make html</tt> to build HTML docs.</li>
+</ol>
+</div>
+<div class="slide" id="writing">
+<h1>Writing</h1>
+<p>You can write in Markdown or ReStructured Text (RST).</p>
+<p>You can organize the files any way that makes sense.</p>
+<ul class="simple">
+<li>You don't pile it all in one file.</li>
+<li>Decompose like you decompose software.</li>
+</ul>
+<p>You can use the <tt class="docutils literal">..&nbsp; automodule::</tt> directive to generate API reference documentation
+from your source code.</p>
+</div>
+<div class="slide" id="id4">
+<h1>Summary</h1>
+<p>Use Sphinx.</p>
+<p>It's how Python's internal documentation is produced.</p>
+<p>Documentation comes from the source.</p>
+</div>
+<div class="slide" id="deployment">
+<h1>7. Deployment</h1>
+<p>Are we there yet?</p>
+<p>How do we deploy the app after we've written, tested, and documented it?</p>
+</div>
+<div class="slide" id="deployment-choices">
+<h1>Deployment Choices</h1>
+<ul class="simple">
+<li>Enterprise server apps</li>
+<li>Desktop apps</li>
+<li>PyPI Packages for apps/libraries/frameworks/modules/packages</li>
+</ul>
+</div>
+<div class="slide" id="enterprise-server-apps">
+<h1>Enterprise server apps</h1>
+<ul class="simple">
+<li>A small script can <tt class="docutils literal">git clone</tt> onto the servers and away you go.</li>
+<li>Docker images are popular.</li>
+<li>AWS Cloud Formation Templates to build server and <tt class="docutils literal">git clone</tt> your app.</li>
+</ul>
+</div>
+<div class="slide" id="desktop-apps">
+<h1>Desktop apps</h1>
+<ul class="simple">
+<li>Helps to build a platform-specific executable.</li>
+<li><strong>py2app</strong> and <strong>py2exe</strong> can help with this.</li>
+<li>They package the Python run-time plus all the required packages</li>
+<li>Docker images are popular for this.</li>
+</ul>
+</div>
+<div class="slide" id="pypi-packages-for-the-world-to-use">
+<h1>PyPI Packages for the world to use</h1>
+<ol class="arabic simple">
+<li>Build a distribution kit.</li>
+<li>Test locally with <strong>tox</strong>.</li>
+<li>Put it on the PyPI test server.</li>
+<li>Make sure <tt class="docutils literal">python <span class="pre">-m</span> pip install</tt> can install it.</li>
+</ol>
+</div>
+<div class="slide" id="creating-a-distribution-kit">
+<h1>Creating A Distribution Kit</h1>
+<p>This can be hellishly complex, depending on what your package contains.</p>
+<p>In the most trivial cases (pure python)</p>
+<ol class="arabic simple">
+<li>Write a setup.py</li>
+<li>Run <tt class="docutils literal">python setup.py sdist</tt></li>
+</ol>
+<p>Beyond that, there are a lot of details to get right.</p>
+</div>
+<div class="slide" id="ci-cd">
+<h1>CI/CD</h1>
+<p>Continuous Integration / Continuous Deployment</p>
+<p>You really want to automate this as much as possible.</p>
+<ul class="simple">
+<li>Enterprise users often work with Jenkins.</li>
+<li>GitHub allows you to include CI/CD commands in your repository.</li>
+</ul>
+<p>You don't want to type commands manually to test, build, and deploy your code.</p>
+</div>
+<div class="slide" id="id5">
+<h1>Summary</h1>
+<p>For &quot;simple&quot; Enterprise cases, <tt class="docutils literal">git clone</tt> is your friend.</p>
+<p>For world-wide distribution via PyPI:</p>
+<ul class="simple">
+<li>Simple pure Python projects have a simple source distribution</li>
+<li>Anything else may involve platform-specific considerations</li>
+</ul>
+</div>
+<div class="slide" id="wrap-up">
+<h1>Wrap-up</h1>
+<ol class="arabic simple">
+<li>Base Python Runtime and Virtual Environment Manager</li>
+<li>Jupyter Lab</li>
+<li>IDE</li>
+<li>Testing</li>
+<li>Multi-Environment Testing</li>
+<li>Documentation</li>
+<li>Deployment</li>
+</ol>
+</div>
+<div class="slide" id="questions">
+<h1>Questions?</h1>
+</div>
+</div>
+</body>
+</html>
