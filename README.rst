@@ -20,16 +20,12 @@ a local JupyterLab server, http://localhost:8888/lab/.
 
 The idea is for an instructor to do the following:
 
-1.  ::
+::
 
     git clone https://github.com/slott56/introduction-python-4hr.git
 
-2.  ::
-
     conda create -n intro --file requirements.txt
     conda activate intro
-
-3.  ::
 
     jupyter lab
 
