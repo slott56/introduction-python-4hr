@@ -17,6 +17,8 @@ Wrote several books for Packt Publications
 `Python Object-Oriented Programming - Fourth Edition
 <https://www.packtpub.com/product/python-object-oriented-programming-fourth-edition/9781801077262>`_
 
+Twitter: @s_lott
+
 About This Course
 =================
 
@@ -30,6 +32,11 @@ I can't answer detailed questions about your system interactively.
 But. You can post them to the chat and fellow students may help.
 
 I can answer other questions about Python.
+
+GitHub
+======
+
+https://slott56.github.io/introduction-python-4hr/
 
 Agenda
 ======
