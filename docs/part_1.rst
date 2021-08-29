@@ -186,7 +186,7 @@ Create a YAML file with the list of packages to install.
 
 ::
 
-    conda list -e &amp;gt;environment.yml
+    conda list -e >environment.yml
 
 Create a new environment from someone's export
 
@@ -310,7 +310,7 @@ What It Looks Like
 
 2.  When the browser opens, build your notebook or module or whatever.
 
-I'm going to launch the lab now...
+I'm going to launch the lab now: `Untitled.ipynb <http://localhost:8888/lab/tree/Untitled.ipynb>`_
 
 Watch
 =====
@@ -409,12 +409,13 @@ Add computations in cells.
 Notebook Time
 =============
 
-Here's a document exported from the notebook, turned into a slide deck.
+Here's the notebook.
 
-`compute_1.html <compute_1.html>`_
+`compute_1.ipynb <http://localhost:8888/lab/tree/compute_1.ipynb>`_
 
 Change the measurement values. Recompute. This is fun.
 
+Also, a document: `compute_1.html <compute_1.html>`_
 
 A Bigger Example
 ================
@@ -432,10 +433,8 @@ We have the HOTPO function, :math:`h(n)`.
 
 If we appy this iteratively, :math:`h(h(h( ... h(n))))`, is the result always 1?
 
-Notebook Time
+Some Code
 =============
-
-I'll skip over some Python details to show how a notebook works.
 
 ::
 
@@ -444,7 +443,6 @@ I'll skip over some Python details to show how a notebook works.
             return n // 2
         else:
             return 3 * n + 1
-
 
 ::
 
@@ -457,9 +455,11 @@ I'll skip over some Python details to show how a notebook works.
 Notebook Time
 =============
 
-Here's a document exported from the notebook, turned into a slide deck.
+Here's the notebook.
 
-`collatz_1.html <collatz_1.html>`_
+`collatz_1.ipynb <http://localhost:8888/lab/tree/collatz_1.ipynb>`_
+
+Also, a document: `collatz_1.html <collatz_1.html>`_
 
 5. Python Targets and run-times
 ===============================

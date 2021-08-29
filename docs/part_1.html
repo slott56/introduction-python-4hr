@@ -800,7 +800,7 @@ conda info --envs
 <h1>Copying a Virtual Environment</h1>
 <p>Create a YAML file with the list of packages to install.</p>
 <pre class="literal-block">
-conda list -e &amp;amp;gt;environment.yml
+conda list -e &gt;environment.yml
 </pre>
 <p>Create a new environment from someone's export</p>
 <pre class="literal-block">
@@ -894,7 +894,7 @@ I'll talk about why Jupyter is so great while this downloads.</div>
 <li><p class="first">When the browser opens, build your notebook or module or whatever.</p>
 </li>
 </ol>
-<p>I'm going to launch the lab now...</p>
+<p>I'm going to launch the lab now: <a class="reference external" href="http://localhost:8888/lab/tree/Untitled.ipynb">Untitled.ipynb</a></p>
 </div>
 <div class="slide" id="watch">
 <h1>Watch</h1>
@@ -968,9 +968,10 @@ jupyter lab
 </div>
 <div class="slide" id="notebook-time">
 <h1>Notebook Time</h1>
-<p>Here's a document exported from the notebook, turned into a slide deck.</p>
-<p><a class="reference external" href="compute_1.html">compute_1.html</a></p>
+<p>Here's the notebook.</p>
+<p><a class="reference external" href="http://localhost:8888/lab/tree/compute_1.ipynb">compute_1.ipynb</a></p>
 <p>Change the measurement values. Recompute. This is fun.</p>
+<p>Also, a document: <a class="reference external" href="compute_1.html">compute_1.html</a></p>
 </div>
 <div class="slide" id="a-bigger-example">
 <h1>A Bigger Example</h1>
@@ -1011,9 +1012,8 @@ jupyter lab
 </div>
 <p>If we appy this iteratively, <span class="formula"><i>h</i>(<i>h</i>(<i>h</i>(...<i>h</i>(<i>n</i>))))</span>, is the result always 1?</p>
 </div>
-<div class="slide" id="id2">
-<h1>Notebook Time</h1>
-<p>I'll skip over some Python details to show how a notebook works.</p>
+<div class="slide" id="some-code">
+<h1>Some Code</h1>
 <pre class="literal-block">
 def h(n: int) -&gt; int:
     if n % 2 == 0:
@@ -1029,10 +1029,11 @@ def iterate_from(n: int) -&gt; None:
         print(n)
 </pre>
 </div>
-<div class="slide" id="id3">
+<div class="slide" id="id2">
 <h1>Notebook Time</h1>
-<p>Here's a document exported from the notebook, turned into a slide deck.</p>
-<p><a class="reference external" href="collatz_1.html">collatz_1.html</a></p>
+<p>Here's the notebook.</p>
+<p><a class="reference external" href="http://localhost:8888/lab/tree/collatz_1.ipynb">collatz_1.ipynb</a></p>
+<p>Also, a document: <a class="reference external" href="collatz_1.html">collatz_1.html</a></p>
 </div>
 <div class="slide" id="python-targets-and-run-times">
 <h1>5. Python Targets and run-times</h1>
